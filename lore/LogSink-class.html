@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the LogSink class from the lore library, for the Dart programming language.">
+  <title>LogSink class - lore library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">lore</a></li>
+    <li><a href="../lore/lore-library.html">lore.dart</a></li>
+    <li class="self-crumb">LogSink class</li>
+  </ol>
+  <div class="self-name">LogSink</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="lore&#47;lore-library-sidebar.html"
+    data-below-sidebar="lore&#47;LogSink-class-sidebar.html">
+    <div>
+<h1><span class="kind-class">LogSink</span> class 
+    <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
+    <a href="https://dart.dev/language/class-modifiers#interface" class="feature feature-interface" title="This class can only be implemented (not extended or mixed in).">interface</a>
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>A low level interface for logging raw messages or bytes to a sink.</p>
+<p>This type is intended to be wrapped to provide a more user-friendly API.</p>
+<p>A <a href="../lore/LogSink-class.html">LogSink</a> is not intended to take ownership of the underlying resource,
+and as such there is no <code>close</code> method. Instead, it is recommended to call
+<a href="../lore/LogSink/flush.html">LogSink.flush</a> before closing the underlying resource or terminating the
+program, and close the underlying resource separately (if necessary).</p>
+<p>There are two built-in implementations:</p>
+<ul>
+<li><a href="../lore/LogSink/LogSink.fromBinarySink.html">LogSink.fromBinarySink</a> writes binary data to a <code>Sink&lt;List&lt;int&gt;&gt;</code>.</li>
+<li><a href="../lore/LogSink/LogSink.fromStringSink.html">LogSink.fromStringSink</a> writes string messages to a <a href="https://api.dart.dev/stable/3.5.3/dart-core/StringSink-class.html">StringSink</a>.</li>
+</ul>
+</section>
+
+
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+
+    <dl class="constructor-summary-list">
+        <dt id="LogSink.fromBinarySink" class="callable">
+          <span class="name"><a href="../lore/LogSink/LogSink.fromBinarySink.html">LogSink.fromBinarySink</a></span><span class="signature">(<span class="parameter" id="fromBinarySink-param-sink"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Sink-class.html">Sink</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/int-class.html">int</a></span>&gt;</span></span>&gt;</span></span> <span class="parameter-name">sink</span>, {</span><span class="parameter" id="fromBinarySink-param-encoding"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-convert/Encoding-class.html">Encoding</a></span> <span class="parameter-name">encoding</span>, </span><span class="parameter" id="fromBinarySink-param-flush"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">flush</span>()?</span>})</span>
+        </dt>
+        <dd>
+          Creates a new <a href="../lore/LogSink-class.html">LogSink</a> that writes binary data to <code>sink</code>.
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+        <dt id="LogSink.fromStringSink" class="callable">
+          <span class="name"><a href="../lore/LogSink/LogSink.fromStringSink.html">LogSink.fromStringSink</a></span><span class="signature">(<span class="parameter" id="fromStringSink-param-sink"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/StringSink-class.html">StringSink</a></span> <span class="parameter-name">sink</span>, {</span><span class="parameter" id="fromStringSink-param-encoder"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-convert/Converter-class.html">Converter</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/int-class.html">int</a></span>&gt;</span></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">encoder</span>, </span><span class="parameter" id="fromStringSink-param-flush"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">flush</span>()?</span>})</span>
+        </dt>
+        <dd>
+          Creates a new <a href="../lore/LogSink-class.html">LogSink</a> that writes string messages to <code>sink</code>.
+            <div class="constructor-modifier features">factory</div>
+        </dd>
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.5.3/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.5.3/dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="flush" class="callable">
+  <span class="name"><a href="../lore/LogSink/flush.html">flush</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.3/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Flushes any buffered data to the sink.
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="writeBytes" class="callable">
+  <span class="name"><a href="../lore/LogSink/writeBytes.html">writeBytes</a></span><span class="signature">(<wbr><span class="parameter" id="writeBytes-param-bytes"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.5.3/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">bytes</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Writes a list of bytes to the sink.
+  
+
+</dd>
+
+        <dt id="writeString" class="callable">
+  <span class="name"><a href="../lore/LogSink/writeString.html">writeString</a></span><span class="signature">(<wbr><span class="parameter" id="writeString-param-message"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Writes a string message to the sink.
+  
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.3/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.5.3/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">lore</a></li>
+    <li><a href="../lore/lore-library.html">lore</a></li>
+    <li class="self-crumb">LogSink class</li>
+</ol>
+
+
+    <h5>lore library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    lore
+      0.1.0-dev
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
